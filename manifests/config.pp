@@ -35,7 +35,25 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class carbon_relay_ng::config {
+class carbon_relay_ng::config (
+  $admin_addr               = $carbon_relay_ng::admin_addr,
+  $admin_port               = $carbon_relay_ng::admin_port,
+  $bad_metrics_max_age      = $carbon_relay_ng::bad_metrics_max_age,
+  $graphite_host            = $carbon_relay_ng::graphite_host,
+  $graphite_interval        = $carbon_relay_ng::graphite_interval,
+  $graphite_port            = $carbon_relay_ng::graphite_port,
+  $http_addr                = $carbon_relay_ng::http_addr,
+  $http_port                = $carbon_relay_ng::http_port,
+  $instance                 = $carbon_relay_ng::instance,
+  $legacy_metric_validation = $carbon_relay_ng::legacy_metric_validation,
+  $listen_addr              = $carbon_relay_ng::listen_addr,
+  $listen_port              = $carbon_relay_ng::listen_port,
+  $log_level                = $carbon_relay_ng::log_level,
+  $max_procs                = $carbon_relay_ng::max_procs,
+  $routes                   = $carbon_relay_ng::routes,
+  $pid_file                 = $carbon_relay_ng::pid_file,
+  $spool_dir                = $carbon_relay_ng::spool_dir
+) {
 
   file { $carbon_relay_ng::config_dir:
     ensure => directory,

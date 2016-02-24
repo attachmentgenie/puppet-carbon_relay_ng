@@ -1,4 +1,4 @@
-# == Class: carbon_relay_ng::config
+# == Class: carbon_relay_ng::service
 #
 # Full description of class carbon_relay_ng here.
 #
@@ -35,18 +35,6 @@
 #
 # Copyright 2016 Your name here, unless otherwise noted.
 #
-class carbon_relay_ng::config {
+class carbon_relay_ng::service {
 
-  file { $carbon_relay_ng::config_dir:
-    ensure => directory,
-    mode   => '0755',
-    owner  => $carbon_relay_ng::configfile_owner,
-    group  => $carbon_relay_ng::configfile_group
-  } ->
-  file { "$carbon_relay_ng::config_dir/$carbon_relay_ng::configfile":
-    content => template('carbon_relay_ng/carbon-relay-ng.ini.erb'),
-    mode    => '0644',
-    owner   => $carbon_relay_ng::configfile_owner,
-    group   => $carbon_relay_ng::configfile_group
-  }
 }

@@ -23,8 +23,10 @@ bad_metrics_max_age = "<%= @bad_metrics_max_age %>"
 legacy_metric_validation = "<%= @legacy_metric_validation %>"
 
 init = [
-<% @routes.each_pair do |key, val| -%>
-  'addRoute sendAllMatch <%= key %> <%= val['ip'] %>:<%= val['port'] %> spool=<%= @spool %> pickle=<%= @pickle %>',
+<% if @routes -%>
+  <% @routes.each_pair do |key, val| -%>
+    'addRoute sendAllMatch <%= key %> <%= val['ip'] %>:<%= val['port'] %> spool=<%= @spool %> pickle=<%= @pickle %>',
+  <% end -%>
 <% end -%>
 ]
 

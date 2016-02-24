@@ -58,6 +58,7 @@ class carbon_relay_ng::params {
   $max_procs                = 2
   $package_ensure           = installed
   $package_manage           = true
+  $package_name             = 'carbon-relay-ng'
   $pickle                   = false
   $pid_file                 = 'carbon-relay-ng.pid'
   $pid_dir                  = '/var/run/carbon-relay-ng'

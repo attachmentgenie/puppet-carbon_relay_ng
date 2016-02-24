@@ -58,6 +58,7 @@ class carbon_relay_ng (
   $max_procs                = $carbon_relay_ng::params::max_procs,
   $package_ensure           = $carbon_relay_ng::params::package_ensure,
   $package_manage           = $carbon_relay_ng::params::package_manage,
+  $package_name             = $carbon_relay_ng::params::package_name,
   $pickle                   = $carbon_relay_ng::params::pickle,
   $pid_file                 = $carbon_relay_ng::params::pid_file,
   $pid_dir                  = $carbon_relay_ng::params::pid_dir,
@@ -109,6 +110,7 @@ class carbon_relay_ng (
     $instance,
     $legacy_metric_validation,
     $log_level,
+    $package_name,
     $pid_file,
     $user
   )

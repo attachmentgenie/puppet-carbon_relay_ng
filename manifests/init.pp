@@ -117,8 +117,8 @@ class carbon_relay_ng (
 
   anchor { 'carbon_relay_ng::begin': } ->
   class { '::carbon_relay_ng::install': } ->
-  class { '::carbon_relay_ng::config': } ~>
-  class { '::carbon_relay_ng::service': } ->
+  class { '::carbon_relay_ng::config': } -> # ~>
+#  class { '::carbon_relay_ng::service': } ->
   anchor { 'carbon_relay_ng::end': }
 
 }

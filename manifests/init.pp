@@ -85,14 +85,14 @@ class carbon_relay_ng (
 
   validate_hash( $routes )
 
-  validate_integer(
+  validate_integer([
     $admin_port,
     $graphite_interval,
     $graphite_port,
     $http_port,
     $listen_port,
     $max_procs
-  )
+  ])
 
   validate_ip_address(
     $admin_addr,

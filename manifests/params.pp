@@ -36,7 +36,7 @@
 # Copyright 2016 Marc Lambrichs
 #
 class carbon_relay_ng::params {
-  $admin_addr               = '0.0.0.0'
+  $admin_addr               = $::ipaddress
   $admin_port               = 2004
   $bad_metrics_max_age      = '24h'
   $configfile               = 'carbon-relay-ng.ini'
@@ -47,11 +47,11 @@ class carbon_relay_ng::params {
   $graphite_interval        = 1000
   $graphite_port            = 2003
   $group                    = 'carbon-relay-ng'
-  $http_addr                = '0.0.0.0'
+  $http_addr                = $::ipaddress
   $http_port                = 8081
   $instance                 = 'default'
   $legacy_metric_validation = 'strict'
-  $listen_addr              = '0.0.0.0'
+  $listen_addr              = $::ipaddress
   $listen_port              = 2003
   $log_level                = 'notice'
   $manage_service           = true

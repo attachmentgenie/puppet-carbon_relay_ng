@@ -65,6 +65,7 @@ class carbon_relay_ng::params {
   $routes                   = {}
   $service_ensure           = 'running'
   $service_enable           = true
+  $service_manage           = true
   $spool                    = true
   $spool_dir                = '/var/spool/carbon-relay-ng'
   $user                     = 'carbon-relay-ng'

@@ -36,5 +36,19 @@
 # Copyright 2016 Your name here, unless otherwise noted.
 #
 class carbon_relay_ng::service {
+  if !($carbon_relay_ng::service_ensure in ['running', 'stopped']) {
+    fail('service_ensure parameter must be \'running\' or \'stopped\'')
+  }
+
+  if $carbon_c_relay::service_manage == true {
+
+    service { $carbon_c_relay::service_name:
+      ensure     => $carbon_c_relay::service_ensure,
+      enable     => $carbon_c_relay::service_enable,
+      name       => $carbon_c_relay::service_name,
+      hasstatus  => true,
+      hasrestart => true,
+    }
+  }
 
 }

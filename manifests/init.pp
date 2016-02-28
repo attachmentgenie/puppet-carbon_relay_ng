@@ -65,6 +65,7 @@ class carbon_relay_ng (
   $routes                   = $carbon_relay_ng::params::routes,
   $service_ensure           = $carbon_relay_ng::params::service_ensure,
   $service_enable           = $carbon_relay_ng::params::service_enable,
+  $service_manage           = $carbon_relay_ng::params::service_manage,
   $spool                    = $carbon_relay_ng::params::spool,
   $spool_dir                = $carbon_relay_ng::params::spool_dir,
   $user                     = $carbon_relay_ng::params::user,

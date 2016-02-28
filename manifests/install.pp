@@ -18,6 +18,7 @@ class carbon_relay_ng::install inherits carbon_relay_ng {
         Group[$carbon_relay_ng::group]
       ]
     }
+
   }
 
 }

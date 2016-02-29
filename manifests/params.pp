@@ -46,7 +46,7 @@ class carbon_relay_ng::params {
   $graphite_host            = 'localhost'
   $graphite_interval        = 1000
   $graphite_port            = 2003
-  $group                    = 'carbon-relay-ng'
+  $group                    = 'carbon-relay'
   $http_addr                = $::ipaddress
   $http_port                = 8081
   $instance                 = 'default'

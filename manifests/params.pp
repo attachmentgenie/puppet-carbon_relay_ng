@@ -39,7 +39,7 @@ class carbon_relay_ng::params {
   $admin_addr               = $::ipaddress
   $admin_port               = 2004
   $bad_metrics_max_age      = '24h'
-  $configfile               = 'carbon-relay-ng.ini'
+  $configfile               = 'carbon-relay-ng.conf'
   $configfile_group         = 'root'
   $configfile_owner         = 'root'
   $config_dir               = '/etc/carbon-relay-ng'
@@ -65,7 +65,10 @@ class carbon_relay_ng::params {
   $routes                   = {}
   $service_ensure           = 'running'
   $service_enable           = true
+  $service_file             = '/usr/lib/systemd/system/carbon-relay-ng.service'
   $service_manage           = true
+  $service_name             = $package_name
+  $service_template         = "carbon_relay_ng${service_file}.erb"
   $spool                    = true
   $spool_dir                = '/var/spool/carbon-relay-ng'
   $user                     = 'carbon-relay-ng'

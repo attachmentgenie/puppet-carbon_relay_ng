@@ -116,10 +116,10 @@ class carbon_relay_ng (
     $user
   )
 
-  anchor { 'carbon_relay_ng::begin': } ->
-  class { '::carbon_relay_ng::install': } ->
-  class { '::carbon_relay_ng::config': } ~>
-  class { '::carbon_relay_ng::service': } ->
-  anchor { 'carbon_relay_ng::end': }
+  anchor { 'carbon_relay_ng::begin': }
+  -> class { '::carbon_relay_ng::install': }
+  -> class { '::carbon_relay_ng::config': }
+  ~> class { '::carbon_relay_ng::service': }
+  -> anchor { 'carbon_relay_ng::end': }
 
 }

@@ -51,6 +51,7 @@ class carbon_relay_ng::config (
   $log_level                = $carbon_relay_ng::log_level,
   $max_procs                = $carbon_relay_ng::max_procs,
   $routes                   = $carbon_relay_ng::routes,
+  $pid_dir                  = $carbon_relay_ng::pid_dir,
   $pid_file                 = $carbon_relay_ng::pid_file,
   $spool_dir                = $carbon_relay_ng::spool_dir
 ) {
@@ -62,7 +63,7 @@ class carbon_relay_ng::config (
     group  => $carbon_relay_ng::configfile_group
   }
   -> file { "${carbon_relay_ng::config_dir}/${carbon_relay_ng::configfile}":
-    content => template('carbon_relay_ng/carbon-relay-ng.ini.erb'),
+    content => template('carbon_relay_ng/carbon-relay-ng.conf.erb'),
     mode    => '0644',
     owner   => $carbon_relay_ng::configfile_owner,
     group   => $carbon_relay_ng::configfile_group

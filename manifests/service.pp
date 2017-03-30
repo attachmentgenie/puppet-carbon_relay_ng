@@ -10,7 +10,7 @@ class carbon_relay_ng::service inherits carbon_relay_ng {
     fail('service_ensure parameter must be \'running\' or \'stopped\'')
   }
 
-  if $carbon_c_relay::service_manage == true {
+  if $carbon_relay_ng::service_manage == true {
 
     file { $carbon_relay_ng::pid_dir:
       ensure => directory,
@@ -28,7 +28,14 @@ class carbon_relay_ng::service inherits carbon_relay_ng {
       before => Service[$carbon_relay_ng::service_name]
     }
 
-    service { $carbon_relay_ng::service_name:
+    file { $carbon_relay_ng::service_file:
+      ensure  => file,
+      group   => 'root',
+      mode    => '0644',
+      owner   => 'root',
+      content => template($carbon_relay_ng::service_template),
+    }
+    ~> service { $carbon_relay_ng::service_name:
       ensure     => $carbon_relay_ng::service_ensure,
       enable     => $carbon_relay_ng::service_enable,
       name       => $carbon_relay_ng::service_name,

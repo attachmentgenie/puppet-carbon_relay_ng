@@ -3,8 +3,7 @@ class carbon_relay_ng::install inherits carbon_relay_ng {
 
   group { $carbon_relay_ng::group:
     ensure => present
-  } ->
-  user { $carbon_relay_ng::user:
+  } -> user { $carbon_relay_ng::user:
     ensure => present,
     groups => $carbon_relay_ng::group,
     shell  => '/sbin/nologin'

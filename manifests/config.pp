@@ -60,8 +60,8 @@ class carbon_relay_ng::config (
     mode   => '0755',
     owner  => $carbon_relay_ng::configfile_owner,
     group  => $carbon_relay_ng::configfile_group
-  } ->
-  file { "${carbon_relay_ng::config_dir}/${carbon_relay_ng::configfile}":
+  }
+  -> file { "${carbon_relay_ng::config_dir}/${carbon_relay_ng::configfile}":
     content => template('carbon_relay_ng/carbon-relay-ng.ini.erb'),
     mode    => '0644',
     owner   => $carbon_relay_ng::configfile_owner,
